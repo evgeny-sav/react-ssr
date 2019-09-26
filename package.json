@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "app:start": "webpack --config ./configs/webpack.config.js",
+    "start": "nodemon ./build/server.bundle.js",
     "app:dev": "webpack-dev-server --config ./configs/webpack.dev.config.js --open",
-    "server:start": "nodemon ./build/server.bundle.js",
+    "app:build": "webpack --config ./configs/webpack.config.js",
     "server:dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./server/index.js",
     "server:build": "webpack --config ./configs/webpack.server.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
