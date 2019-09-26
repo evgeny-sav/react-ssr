@@ -9,11 +9,11 @@ import { App } from '../client/src/components/App';
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, '..', 'build')));
+app.use(express.static(path.resolve('build')));
 
 app.get('*', (req, res) => {
     const reactApp = ReactDOMServer.renderToString(<App />);
-    const indexFile = path.resolve('./public/index.html');
+    const indexFile = path.resolve('build/index.html');
 
     fs.readFile(indexFile, 'utf8', (err, data) => {
         if (err) {

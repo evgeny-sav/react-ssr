@@ -33,8 +33,20 @@ module.exports = {
                         },
                     },
                     'css-loader',
-                    'postcss-loader',
                     'sass-loader',
+                ],
+            },
+            {
+                test: /\.(png|jpg|gif|woff2|woff|ttf|svg|eot)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'public/assets/images',
+                            name: '[name].[ext]',
+                        },
+                    },
                 ],
             },
         ],
